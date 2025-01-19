@@ -1,10 +1,8 @@
-#include <stdio.h>
-#include "pico/stdlib.h"
-#include "gpio.h"
 #include "buzzer.h"
+#include "pico/stdlib.h"
 
-void controle_buzzer () {
-    gpio_put(BUZZER, 1);
-    sleep_ms(2000);
-    gpio_put(BUZZER, 0);
+void acionar_buzzer() {
+    gpio_put(21, 1);
+    sleep_ms(2000); // Ativa o buzzer por 2 segundos
+    gpio_put(21, 0);
 }

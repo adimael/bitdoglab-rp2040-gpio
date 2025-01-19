@@ -1,10 +1,32 @@
-#include "pico/stdlib.h"
-#include "gpio.h"
 #include "led.h"
+#include "pico/stdlib.h"
 
-void controle_led(int red, int blue, int green){
-    gpio_put(LED_RED, red);
-    gpio_put(LED_BLUE, blue);
-    gpio_put(LED_GREEN, green);
+void ligar_led_verde() {
+    gpio_put(11, 1);
+    gpio_put(12, 0);
+    gpio_put(13, 0);
 }
 
+void ligar_led_azul() {
+    gpio_put(11, 0);
+    gpio_put(12, 1);
+    gpio_put(13, 0);
+}
+
+void ligar_led_vermelho() {
+    gpio_put(11, 0);
+    gpio_put(12, 0);
+    gpio_put(13, 1);
+}
+
+void ligar_led_branco() {
+    gpio_put(11, 1);
+    gpio_put(12, 1);
+    gpio_put(13, 1);
+}
+
+void desligar_leds() {
+    gpio_put(11, 0);
+    gpio_put(12, 0);
+    gpio_put(13, 0);
+}
